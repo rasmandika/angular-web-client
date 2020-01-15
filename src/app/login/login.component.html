@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col align-self-center title">
+      <h3>LOGIN USER</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col align-self-center">
+      <mat-card class="my-card">
+        <mat-card-content>
+          <div class="alert alert-danger" role="alert" [hidden]="hideAlert">
+            {{errorMsg}}
+          </div>
+          <form class="m-form" [formGroup]="form">
+            <div class="row">
+              <div class="col-3">
+                <label>Username</label>
+              </div>
+              <div class="col-9">
+                <div class="form-group m-form__group">
+                  <input class="form-control m-input" type="text" autocomplete="off" formControlName="username" (focus)="focusFunction()">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label>Password</label>
+              </div>
+              <div class="col-9">
+                <div class="form-group m-form__group">
+                  <input class="form-control m-input m-login__form-input--last" type="password" formControlName="password" (focus)="focusFunction()">
+                </div>
+              </div>
+            </div>
+          </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row">
+            <div class="col align-self-center">
+              <button style="width: 100%;" type="button" class="btn btn-primary" (click)="login()">Login</button>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

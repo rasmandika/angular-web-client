@@ -1,0 +1,10 @@
+{
+  "/v1/api": {
+    "target": "http://103.108.127.4:2217",
+    "secure": false,
+    "pathRewrite": {
+      "^/posts": ""
+    },
+    "changeOrigin": true
+  }
+}

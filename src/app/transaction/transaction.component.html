@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col align-self-center title">
+      <h3>TRANSACTION</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col align-self-center">
+      <mat-card class="my-card">
+        <mat-card-content>
+          <div class="alert alert-{{alertType}}" role="alert" [hidden]="hideAlert">
+            {{errorMsg}}
+          </div>
+          <form class="m-form">
+            <div class="row">
+              <div class="col-3">
+                <label>Phone Number</label>
+              </div>
+              <div class="col-9">
+                <div class="form-group m-form__group">
+                  <input type="number" class="form-control m-input" autocomplete="off" (keyup)="fillUpNumber($event.target.value)">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label>Operator</label>
+              </div>
+              <div class="col-9">
+                <div class="form-group m-form__group">
+                  <select class="form-control" (change)="selectOperator($event.target.value)">
+                    <option *ngFor="let item of operators" [value]="item">{{item}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row" [hidden]="hidePulsa">
+              <div class="col-3">
+                <label>Pulsa</label>
+              </div>
+              <div class="col-9">
+                <div class="form-group m-form__group">
+                  <select class="form-control" (change)="selectVoucher($event.target.value)">
+                    <option *ngFor="let item of vouchers" [value]="item.pulsa">{{item.harga}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label>Pulsa</label>
+              </div>
+              <div class="col-9">
+                <label>Rp. {{harga}}</label>
+              </div>
+            </div>
+          </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row">
+            <div class="col align-self-center">
+              <button style="width: 100%;" type="button" class="btn btn-primary" (click)="saveTransaction()">SAVE TRANSACTION</button>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
