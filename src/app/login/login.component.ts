@@ -51,9 +51,7 @@ export class LoginComponent implements OnInit {
         }
         this.hideAlert = false;
       }
-      console.log(res);
     }, err => {
-      console.log(err);
       if (typeof err.msg !== 'undefined') {
         this.errorMsg = err.msg;
       }
